@@ -13,25 +13,27 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/exam/java")
 public class JavaController {
-private final QuestionService service;
+    private final QuestionService service;
 
-@Autowired
+    @Autowired
     public JavaController(QuestionService service) {
         this.service = service;
     }
+
     @GetMapping("/add/object")
-    public Question addQuestion(@RequestParam ("question") String question, @RequestParam ("answer")String answer) {
-    return service.add(question, answer);
+    public Question addQuestion(@RequestParam("question") String question, @RequestParam("answer") String answer) {
+        return service.add(question, answer);
     }
 
     @GetMapping("/remove")
-    public Question removeQuestion(@RequestParam ("question") String question, @RequestParam ("answer") String answer) {
-    Question questionToRemove = new Question(question, answer);
-    return service.remove(questionToRemove);
+    public Question removeQuestion(@RequestParam("question") String question, @RequestParam("answer") String answer) {
+        Question questionToRemove = new Question(question, answer);
+        return service.remove(questionToRemove);
     }
-@GetMapping
+
+    @GetMapping
     public Collection<Question> getQuestion() {
-    return service.getAll();
+        return service.getAll();
     }
 
 

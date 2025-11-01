@@ -14,7 +14,7 @@ public class ExamController {
 
     @Autowired
     public ExamController(ExaminerService examService) {
-                this.examService = examService;
+        this.examService = examService;
     }
 
     @GetMapping("/{amount}")

@@ -28,13 +28,14 @@ public class Question {
         Question question1 = (Question) o;
         return Objects.equals(question, question1.question) && Objects.equals(answer, question1.answer);
     }
-        @Override
-        public int hashCode () {
-            return Objects.hash(question, answer);
-        }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(question, answer);
+    }
 
     @JsonIgnore
-        public boolean isEmpty() {
-            return question == null || question.trim().isEmpty() || answer == null || answer.trim().isEmpty();
-        }
+    public boolean isEmpty() {
+        return question == null || question.trim().isEmpty() || answer == null || answer.trim().isEmpty();
+    }
 }

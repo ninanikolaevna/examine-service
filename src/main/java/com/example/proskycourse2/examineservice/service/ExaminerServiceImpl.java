@@ -4,6 +4,7 @@ import com.example.proskycourse2.examineservice.domain.Question;
 import com.example.proskycourse2.examineservice.exception.TooManyQuestionsRequestedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.*;
 
 @Service
@@ -15,7 +16,8 @@ public class ExaminerServiceImpl implements ExaminerService {
     public ExaminerServiceImpl(QuestionService questionService) {
         this.questionService = questionService;
     }
-@Override
+
+    @Override
     public Collection<Question> getQuestions(int amount) {
         Collection<Question> allQuestions = questionService.getAll();
         validateAmount(amount, allQuestions.size());

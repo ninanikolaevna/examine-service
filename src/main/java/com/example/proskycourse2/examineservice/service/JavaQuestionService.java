@@ -7,9 +7,9 @@ import java.util.*;
 
 @Service
 public class JavaQuestionService implements QuestionService {
+    //    private final Set<Question> usedQuestions = new HashSet<>();
     Random random = new Random();
     Set<Question> questions = new HashSet<>();
-    private final Set<Question> usedQuestions = new HashSet<>();
 
     @Override
     public Question add(String question, String answer) {
@@ -54,7 +54,7 @@ public class JavaQuestionService implements QuestionService {
         List<Question> questionList = new ArrayList<>(questions);
         int randomIndex = random.nextInt(questionList.size());
         Question randomQuestion = questionList.get(randomIndex);
-        usedQuestions.add(randomQuestion);
+//        usedQuestions.add(randomQuestion);
         return randomQuestion;
     }
 }
